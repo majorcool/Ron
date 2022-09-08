@@ -1,2 +1,2 @@
-money = "0"
+money = 0.0
 print(money)
