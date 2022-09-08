@@ -1,2 +1,2 @@
-money = 12999 * 9.5 - 200
+money = 12999 * 0.95 - 200
 print(money)
