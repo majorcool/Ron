@@ -10,26 +10,26 @@ print(float(12.2))#print转化小数
 
 #买苹果
 #输入苹果单价
-pricea = input("苹果的单价")
+aPrice = input("苹果的单价")
 #输入苹果的重量
-weighta = input("苹果的重量")
+aWeight = input("苹果的重量")
 #计算支付的总金额,两个字符串间不能直接做乘法
 #将价格转换成小数
-price = float(pricea)
+price = float(aPrice)
 #将重量转化为小数
-weight = float(weighta)
+weight = float(aWeight)
 #计算金额
 money = price * weight
 print(money)
 
 #买苹果改进版--------改进内容：将float小数函数提到input输入函数前，节省变量只定义了3个变量
 #输入苹果单价
-priceb = float(input("苹果的单价"))
+bPrice = float(input("苹果的单价"))
 #输入苹果重量
-weightb = float(input("苹果的重量"))
+bWeight = float(input("苹果的重量"))
 #计算金额
-moneyb = priceb * weightb
-print(moneyb)
+bMoney = bPrice * bWeight
+print(bMoney)
 
 #格式化输出1，%s字符串
 name = "大明"
@@ -38,10 +38,10 @@ print("我的名字叫%s，请多多关照！" %name)
 student_number = 654
 print("我的学号是%06d" %student_number)
 #格式化输出3，%f小数,%.2f的意思是小数点后2位
-pricec = 8.5
-weightc = 7.5
-moneyc = pricec * weightc
-print("苹果单价%.2f元/斤，买了%.2f斤，需支付%.2f元" %(pricec,weightc,moneyc))
+cPrice = 8.5
+cWeight = 7.5
+cMoney = cPrice * cWeight
+print("苹果单价%.2f元/斤，买了%.2f斤，需支付%.2f元" %(cPrice,cWeight,cMoney))
 #格式化输出4，%,%.2意思是两位百分数
 scale = 0.25
 print("数据比列是%.2f%%" %(scale * 100))
