@@ -4,10 +4,10 @@ def xk():
     c = len(list_num)
     b = 0
     while b < c:
-        if isinstance(c, int):
+        if isinstance(list_num[b], int):
             num = list_num[b] * 2
             list_num[b] = num
-            b += 1
+        b += 1
     return list_num
 n = xk()
 print(n)
