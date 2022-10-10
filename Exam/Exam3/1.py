@@ -14,4 +14,6 @@ def three(num_list):
 
 
 n = [-1, 0, 1, 2, -1, -4]
-print(three(n))
+# print(three(n))
+# import os
+# os.system('clear')
