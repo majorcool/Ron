@@ -1,7 +1,2 @@
-a = "B"
-b = "A"
-d = "C"
-c = a + b + d
-print(c)
-if c == "BAC":
-    print("TTT")
+a = [1,2,3,4,5,6]
+print(a[0,6,2])
