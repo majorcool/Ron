@@ -11,7 +11,7 @@ def three(num_list):
                     result.append(tuple(sorted((x, y, z))))
                     list(set(result))
     return result
-
+#dcad
 
 n = [-1, 0, 1, 2, -1, -4]
 # print(three(n))
