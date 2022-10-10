@@ -12,6 +12,8 @@ def three(num_list):
                     list(set(result))
     return result
 
+
+#2664946444
 n = [-1, 0, 1, 2, -1, -4]
 # print(three(n))
 # import os
