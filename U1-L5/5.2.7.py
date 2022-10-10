@@ -2,14 +2,15 @@
 # 提示用户输入用户名和密码
 # 如果登录成功，打印欢迎消息
 # 如果失败，说明具体的错误原因，让用户重新登陆，共有 3 次机会
+
 users = ('root', 'user1', 'user2')
 passwords = ('123', 'abc', '@*#')
 try_num = 0
 while try_num < 3:
     name = str(input("请输入用户名"))
     if name == users[0]:
-        password = int(input("请输入密码"))
-        if password == 123:
+        password = str(input("请输入密码"))
+        if password == "123":
             print("密码正确，登陆成功")
             break
         else:
