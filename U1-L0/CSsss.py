@@ -1,2 +1,6 @@
-a = [1,2,3,4,5,6]
-print(a[0,6,2])
+for a in range(0,2):
+    print(a)
+    for b in range(0,2):
+        print(b)
+        for c in range(0,2):
+            print(c)
