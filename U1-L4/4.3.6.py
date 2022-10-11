@@ -11,7 +11,7 @@ def num_99(n):
             a = str(a)
             b = str(b)
             num = str(num)
-            over += a + " * " + b + " = " + num + "     "
+            over += a + " * " + b + " = " + num + "\t"
             a = int(a)
             b = int(b)
             num = int(num)
