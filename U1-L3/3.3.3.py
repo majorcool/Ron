@@ -6,9 +6,9 @@
 ……
 '''
 num = 0
-for a in range(1,10):
-        print("\n")
-        for b in range(1,a+1):
-            num = a*b
-            print(a," * ",b,end=" = ")
-            print(num,end="    ")
+for a in range(1, 10):
+    print("\n")
+    for b in range(1, a+1):
+        num = a * b
+        print(a, " * ", b, end=" = ")
+        print(num, end="\t")
