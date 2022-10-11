@@ -2,8 +2,10 @@
 z = 1
 while z == 1:
     a = int(input("请输入正整数"))
-    print(a,end="它的因数有")
-    for b in range(1,a+1):
-        if a % b == 0:
+    print(a, end="它的因数有")
+    for b in range(1, a+1):
+        if a % b == 0 and b < a:
             print(b, end=",")
+        elif a % b == 0 and b == a:
+            print(b)
     print()
