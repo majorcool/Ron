@@ -5,13 +5,15 @@
 
 a = 0
 while a == 0:
-    nl = int(input("请输入年龄"))
+    nl = int((input("请输入年龄")))
+
     if 3 > nl >= 0:
         print("免费")
-    if 12 >= nl >= 3:
+    elif 12 >= nl >= 3:
         print("10美元")
-    if nl > 12:
+    elif nl > 12:
         print("15美元")
-    if nl < 0:
-        print("？？？")
+    else:
+        print("???")
+
 
