@@ -9,23 +9,25 @@
 # 再次修改心愿单，使地点按与字母顺序相反的顺序排列。打印心愿单，核实排列顺序确实变了
 travel_list = ["B","A","D","E","C"]
 print(travel_list)
-print(travel_list[1])
-print(travel_list[0])
-print(travel_list[4])
-print(travel_list[2])
-print(travel_list[3])
+
+travel_list_1 = travel_list.copy()
+travel_list_1.sort()
+print(travel_list_1)
 print(travel_list)
-print(travel_list[3])
-print(travel_list[2])
-print(travel_list[4])
-print(travel_list[0])
-print(travel_list[1])
+
+travel_list_2 = travel_list.copy()
+travel_list_2.sort(reverse=True)
+print(travel_list_2)
 print(travel_list)
+
 travel_list.reverse()
 print(travel_list)
+
 travel_list.reverse()
 print(travel_list)
+
 travel_list.sort()
 print(travel_list)
+
 travel_list.sort(reverse=True)
 print(travel_list)
