@@ -7,4 +7,4 @@ while money <= 200000000:
         break
     money /= 2
     a += 1
-print("需要%d月，此时她的资产为%d元" %(a,money))
+print("需要%f月，此时她的资产为%f元" % (a, money))
