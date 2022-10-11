@@ -6,5 +6,4 @@ for a in range(1,101):
         b += a
     if a % 2 != 0:
         c += a
-    a += 1
 print("奇数之和为%d，偶数之和为%d"%(c,b))
