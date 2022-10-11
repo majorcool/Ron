@@ -11,5 +11,4 @@ while j <= 30:
     j += 1
     f += g
 a = f / 30
-a = float(a)
 print("录入完毕！平均分为%d分！" % a)
