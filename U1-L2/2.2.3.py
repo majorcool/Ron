@@ -9,7 +9,7 @@ elif 16 >= your_age >= 13:
     print("他正处于青春期")
 elif 24 >= your_age >= 17:
     print("他是年轻人")
-elif 64 >= your_age >= 18:
+if 64 >= your_age >= 18:
     print("他是成年人")
 elif your_age >= 65:
     print("他是老人")
