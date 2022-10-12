@@ -11,3 +11,5 @@ def cut(first, cutting):
 
 
 cut('They are students.', 'aeiou')
+
+# 不理解
