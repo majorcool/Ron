@@ -9,15 +9,19 @@ grade5 = int(input("第5个分数"))
 grade6 = int(input("第6个分数"))
 grade7 = int(input("第7个分数"))
 dif = int(input("难度系数"))
+
+
 def swim():
     swim_grade = [grade1, grade2, grade3, grade4, grade5, grade6, grade7]
     swim_grade.sort()
     del swim_grade[0]
-    del swim_grade[1]
+    del swim_grade[0]
     swim_grade.sort(reverse=True)
     del swim_grade[0]
-    del swim_grade[1]
+    del swim_grade[0]
     number = (swim_grade[0] + swim_grade[1] + swim_grade[2]) * dif
     return number
+
+
 number0 = swim()
-print("最终得分为%d"%number0)
+print("最终得分为%d" % number0)
