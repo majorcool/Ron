@@ -15,4 +15,5 @@ def key_key(login_info):
                         print("字母,不能有特殊符号")
                 if password >= 8 and password.isalnum() == True:
                     break
+            login_info["key_3"] = password
 
