@@ -11,5 +11,3 @@ def different(n, str="123456789"):
 
 
 print(different(2))
-
-
