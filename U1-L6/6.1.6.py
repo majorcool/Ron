@@ -3,19 +3,17 @@
 def happy(n):
     n = n.swapcase()
     long = len(n) - 1
-    abc = "abcdefghijklmnopqrstuvwxyz"
+    abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     ll = []
-    for l in range(0, long):
+    for l in range(0, long+1):
         ll.append(n[l])
-    for a in range(0, long):
+    for a in range(0, long+1):
         num = n[a]
         w = abc.find(num)
-        w = abc[-w]
+        w = abc[-(w+1)]
         ll[a] = w
-    for lll in range(0, long):
+    for lll in range(0, long+1):
         print(ll[lll], end="")
 
 
 happy("abcABC")
-# leeues
-# 不明白
