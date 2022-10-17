@@ -11,4 +11,4 @@ def move(x, direction="right", list_input=[]):
         print(left_move)
 
 
-move(3, "left", [1, 2, 3, 4])
+move(3, "left", [1, 2, 3, 4, 5, 6])
