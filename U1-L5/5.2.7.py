@@ -10,7 +10,7 @@ while try_num < 3:
     name = str(input("请输入用户名"))
     if name == users[0]:
         password = str(input("请输入密码"))
-        if password == "123":
+        if password == passwords[0]:
             print("密码正确，登陆成功")
             break
         else:
@@ -19,7 +19,7 @@ while try_num < 3:
             continue
     if name == users[1]:
         password = str(input("请输入密码"))
-        if password == "abc":
+        if password == passwords[1]:
             print("密码正确，登陆成功")
             break
         else:
@@ -28,7 +28,7 @@ while try_num < 3:
             continue
     if name == users[2]:
         password = str(input("请输入密码"))
-        if password == "@*#":
+        if password == passwords[2]:
             print("密码正确，登陆成功")
             break
         else:
