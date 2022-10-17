@@ -7,15 +7,22 @@
 def update_dict(dict_sample):
     dict_key = str(input("请输入key类型为字符串"))
     dict_value = int(input("请输入value类型为数字"))
+    dict_add = {dict_key: dict_value}
     for key in dict_sample:
         if key != dict_key:
-            dict_add = {dict_key: dict_value}
-            dict_sample.update(dict_add)
+            break
         else:
             if dict_value >= dict_sample[key]:
-                dict_sample[key] = dict_sample[key]
+                break
             if dict_value < dict_sample[key]:
-                dict_sample[key] = dict_add[key]
+                break
+    if key != dict_key:
+        dict_sample.update(dict_add)
+    else:
+        if dict_value >= dict_sample[key]:
+            dict_sample[key] = dict_sample[key]
+        if dict_value < dict_sample[key]:
+            dict_sample[key] = dict_add[key]
     return dict_sample
 
 
