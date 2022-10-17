@@ -9,5 +9,5 @@ info = {
         'money': 87
     }
 }
-print("小明买了苹果，草莓，香蕉，花了89块钱")
-print("小刚买了葡萄，橘子，樱桃，花了87块钱")
+print("小明买了%s,花了%d元"%(info['小明']['fruits'], info['小明']['money']))
+print("小刚买了%s,花了%d元"%(info['小刚']['fruits'], info['小刚']['money']))
