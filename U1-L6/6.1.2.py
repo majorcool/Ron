@@ -1,5 +1,6 @@
 # 6.1.2 定义一个函数，参数为 1 个字符串，判断它是否为 '回文数'
 # 如果一个数字左右对称，就是 '回文数'，如 123454321, 1221
+'''
 def number(num):
     if len(num) % 2 == 0:
         long_1_1 = int(len(num) / 2)
@@ -24,3 +25,12 @@ def number(num):
 a = str(input("请输入数字："))
 
 number(a)
+'''
+
+
+def number(str_input):
+    return str_input == str_input[::-1]
+
+
+n = "1121"
+print(number(n))
