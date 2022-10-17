@@ -4,14 +4,14 @@ def compare_dict(dict1, dict2):
     empty = []
     num = 0
     empty.append(num)
-    for key in dict1:
-        one = dict1[key]
-        for value in dict2.values():
-            two = value
+    for item in dict1.items():
+        one = item
+        for item_1 in dict2.items():
+            two = item_1
             if one == two:
-                empty.append(dict1[key])
+                empty.append(one)
                 num += 1
-                empty[0]=num
+                empty[0] = num
     empty = tuple(empty)
     return empty
 
