@@ -37,9 +37,21 @@ while True:
     win_O = ["O", "O", "O"]
     if line_1 == win_X or line_2 == win_X or line_3 == win_X or rowe_1 == win_X or rowe_2 == win_X or rowe_3 == win_X or diagonal_1 == win_X or diagonal_2 == win_X:
         print("XXXXXXPlayer1 win!!!")
+        print("Game---Tic-Tac-Toe")
+        print("  %s |  %s  | %s " % (chess_all_place[0], chess_all_place[1], chess_all_place[2]))
+        print("---- ----- ----")
+        print("  %s |  %s  | %s " % (chess_all_place[3], chess_all_place[4], chess_all_place[5]))
+        print("---- ----- ----")
+        print("  %s |  %s  | %s " % (chess_all_place[6], chess_all_place[7], chess_all_place[8]))
         break
     if line_1 == win_O or line_2 == win_O or line_3 == win_O or rowe_1 == win_O or rowe_2 == win_O or rowe_3 == win_O or diagonal_1 == win_O or diagonal_2 == win_O:
         print("XXXXXXPlayer2 win!!!")
+        print("Game---Tic-Tac-Toe")
+        print("  %s |  %s  | %s " % (chess_all_place[0], chess_all_place[1], chess_all_place[2]))
+        print("---- ----- ----")
+        print("  %s |  %s  | %s " % (chess_all_place[3], chess_all_place[4], chess_all_place[5]))
+        print("---- ----- ----")
+        print("  %s |  %s  | %s " % (chess_all_place[6], chess_all_place[7], chess_all_place[8]))
         break
     if len(cut_num) == 6:
         cut_near = int(cut_num[0]) + 1
@@ -51,4 +63,3 @@ while True:
         cut = int(cut_num[0])
         chess_all_place[cut] = " "
         del cut_num[0]
-
