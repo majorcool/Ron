@@ -1,3 +1,8 @@
+# 1. 用多行注释的方式，写出 Python 目前所有的内置函数
+# https://docs.python.org/zh-cn/3/library/functions.html
+
+# 2. 用多行注释的方式，说明什么是公共方法；同时，用一些代码举几个简单的例子
+# 谁都能用的方法
 """
 len()元素个数
 del()删除元素
@@ -69,3 +74,6 @@ for key in students:
 else:
     print("抱歉没有找到%s" % find_name)
 print("循环结束")
+
+# 3. 用多行注释的方式，简单描述公共方法和内置函数的关系
+# 公共方法属于内置函数，但是内置函数不一定是公共方法
