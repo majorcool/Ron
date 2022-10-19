@@ -11,7 +11,11 @@ while True:
     print("  %s |  %s  | %s " % (chess_all_place[6], chess_all_place[7], chess_all_place[8]))
     print("Please put the chess in the right place, from 1---9")
     if step % 2 == 1:
-        chess_place = int(input("Player1,X:"))
+        chess_place = str(input("Player1,X:"))
+        if chess_place.isdigit() == False or len(chess_place) != 1:
+            print("XXXXXXYou can only chess1-9")
+            continue
+        chess_place = int(chess_place)
         if chess_all_place[chess_place - 1] == "X" or chess_all_place[chess_place - 1] == "O":
             print("XXXXXXChess's places can't be same")
             continue
@@ -19,7 +23,11 @@ while True:
         cut_num.append(chess_place - 1)
         step += 1
     elif step % 2 == 0:
-        chess_place = int(input("Player2,O:"))
+        chess_place = str(input("Player2,O:"))
+        if chess_place.isdigit() == False or len(chess_place) != 1:
+            print("XXXXXXYou can only chess1-9")
+            continue
+        chess_place = int(chess_place)
         if chess_all_place[chess_place - 1] == "X" or chess_all_place[chess_place - 1] == "O":
             print("XXXXXXChess's places can't be same")
             continue
