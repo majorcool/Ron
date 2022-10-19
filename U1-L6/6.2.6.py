@@ -19,3 +19,5 @@ while True:
     n = int(input("数字:"))
     print(name(n))
 
+
+
