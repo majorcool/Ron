@@ -10,3 +10,4 @@ def same(s1, s2):
 
 
 same("bvc", "cvn")
+
