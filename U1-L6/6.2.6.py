@@ -20,4 +20,3 @@ while True:
     print(name(n))
 
 
-
