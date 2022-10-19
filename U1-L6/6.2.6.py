@@ -19,9 +19,3 @@ while True:
     n = int(input("数字:"))
     print(name(n))
 
-"""
-n-1  % 26===第一位 == 第二位
-n=n//26
-n-1  % 26
-while n > 0:
-"""
