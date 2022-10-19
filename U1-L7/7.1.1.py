@@ -9,4 +9,4 @@ def same(s1, s2):
 
 
 
-same("bvc", "cvb")
+same("bvc", "cvn")
