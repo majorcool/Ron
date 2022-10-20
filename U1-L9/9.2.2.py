@@ -6,4 +6,4 @@ def dao(n):
         return dao(n[1:]) + n[0]
 
 
-print(dao(1234567890))
+print(dao(123456789))
