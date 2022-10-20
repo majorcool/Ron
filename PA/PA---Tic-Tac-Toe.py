@@ -3,6 +3,16 @@ chess_all_place = [" ", " ", " ", " ", " ", " ", " ", " ", " "]  # 棋子的总�
 cut_num = []  # 记录并删除第七颗棋子的时机，位置
 step = 1  # 判断玩家奇数为P1偶数为P2
 while True:
+    if len(cut_num) == 6:
+        cut_near = int(cut_num[0]) + 1
+        print("XXXXXXafter next step, %d place's chess will be cut" % cut_near)
+    if len(cut_num) == 7:
+        cut_near = int(cut_num[0]) + 2
+        print("XXXXXXafter next step, %d place's chess will be cut" % cut_near)
+    if len(cut_num) > 6:
+        cut = int(cut_num[0])
+        chess_all_place[cut] = " "
+        del cut_num[0]
     print("Game---Tic-Tac-Toe")  # 这是棋盘
     print("  %s |  %s  | %s " % (chess_all_place[0], chess_all_place[1], chess_all_place[2]))
     print("---- ----- ----")
@@ -62,13 +72,4 @@ while True:
         print("---- ----- ----")
         print("  %s |  %s  | %s " % (chess_all_place[6], chess_all_place[7], chess_all_place[8]))
         break
-    if len(cut_num) == 6:
-        cut_near = int(cut_num[0]) + 1
-        print("XXXXXXafter next step, %d place's chess will be cut" % cut_near)
-    if len(cut_num) == 7:
-        cut_near = int(cut_num[0]) + 2
-        print("XXXXXXafter next step, %d place's chess will be cut" % cut_near)
-    if len(cut_num) > 6:
-        cut = int(cut_num[0])
-        chess_all_place[cut] = " "
-        del cut_num[0]
+
