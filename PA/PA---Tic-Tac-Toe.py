@@ -71,3 +71,4 @@ while True:
         print("---- ----- ----")
         print("  %s |  %s  | %s " % (chess_all_place[6], chess_all_place[7], chess_all_place[8]))
         break
+
