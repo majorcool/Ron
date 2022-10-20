@@ -8,7 +8,7 @@ def factorial(num):  # 递归阶乘
 print(factorial(1))
 
 
-def fibonacci(num):
+def fibonacci(num):  # 斐波那契数
     if num == 0:
         return 0
     if num == 1:
@@ -17,3 +17,12 @@ def fibonacci(num):
 
 
 print(fibonacci(1))
+
+
+def han(n):  # 汉诺塔游戏
+    if n == 1:
+        return 1
+    return han(n-1) + 1 + han(n-1)
+
+
+print(han(9))
