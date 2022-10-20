@@ -6,4 +6,4 @@ def fibonacci(num):  # 斐波那契数
     return fibonacci(num-1) + fibonacci(num-2)
 
 
-print(fibonacci(2))
+print(fibonacci(1))
