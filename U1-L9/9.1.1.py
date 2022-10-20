@@ -5,4 +5,4 @@ def factorial(num):  # 递归阶乘
         return num * factorial(num-1)
 
 
-print(factorial(2))
+print(factorial(1))
