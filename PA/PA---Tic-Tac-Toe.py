@@ -1,3 +1,4 @@
+import os
 chess_all_place = [" ", " ", " ", " ", " ", " ", " ", " ", " "]  # 棋子的总体位置
 cut_num = []  # 记录并删除第七颗棋子的时机，位置
 step = 1  # 判断玩家奇数为P1偶数为P2
@@ -31,6 +32,7 @@ while True:
         chess_all_place[chess_place - 1] = "X"
         cut_num.append(chess_place - 1)
         step += 1
+        os.system("cls")
     elif step % 2 == 0:
         chess_place = str(input("Player2,O:"))
         if chess_place.isdigit() == False or len(chess_place) != 1:
@@ -43,6 +45,7 @@ while True:
         chess_all_place[chess_place - 1] = "O"
         cut_num.append(chess_place - 1)
         step += 1
+        os.system("cls")
     line_1 = chess_all_place[0:3:1]
     line_2 = chess_all_place[3:6:1]
     line_3 = chess_all_place[6:9:1]
