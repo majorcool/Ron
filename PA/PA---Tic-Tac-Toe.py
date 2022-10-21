@@ -43,7 +43,7 @@ while True:
                 print("  %s |  %s  | %s " % (chess_all_place_2[6], chess_all_place_2[7], chess_all_place_2[8]))
                 print("Please put the chess in the right place, from 1---9")
                 chess_place_2 = str(input("Player2,O:"))
-                if chess_place_2.isdigit() == False or len(chess_place_2) != 1:
+                if chess_place_2.isdigit() == False or len(chess_place_2) != 1:  # 判断棋子合不合理
                     os.system("cls")  # clear
                     print("\033[1;31;40mXXXXXXYou can only chess1-9\033[0m")
                     continue
@@ -87,7 +87,7 @@ while True:
                 print("  %s |  %s  | %s " % (chess_all_place_2[6], chess_all_place_2[7], chess_all_place_2[8]))
                 Play_way = "0"
                 break
-            if step_2 > 9:
+            if step_2 > 9:  # 平局判断
                 print("\033[1;31;40mXXXXXXdogfall\033[0m")
                 Play_way = "0"
                 break
