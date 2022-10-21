@@ -1,4 +1,3 @@
-# 有一个莫名其妙的问题…
 import os
 print("Please change 'Edit Run/Debug configurations' setting to PA---Tic-Tac-Toe")
 chess_all_place = [" ", " ", " ", " ", " ", " ", " ", " ", " "]  # 棋子的总体位置
