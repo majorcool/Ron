@@ -37,5 +37,5 @@ def password(user_info):
             print("只能使用数字，小写字母和大写字母，且至少包含其中两种!")
 
 
-user_info = {"xk": "12345678b"}
+user_info = {"xk": "12345678n"}
 print(password(user_info))
