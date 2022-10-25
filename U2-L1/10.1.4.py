@@ -10,4 +10,3 @@ watermelon = Fruits()
 apple.color = "red"
 orange.color = "yellow"
 watermelon.color = "green"
-
