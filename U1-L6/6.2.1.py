@@ -3,8 +3,9 @@
 # 返回字符串中最后一个单词的长度
 # s 仅有英文字母和空格 ' ' 组成；s 中至少存在一个单词
 def long_word(s):
-    a = s.partition(" ")
+    a = s.split(" ")
     b = a[len(a)-1]
+    b = len(b)
     print(b)
 
 
