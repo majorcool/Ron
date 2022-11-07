@@ -4,16 +4,23 @@
 在类封装的方法内部，self就表示当前调用方法的对象自己
 """
 class Cat:
-    def eat(self):
-        print("%s 爱吃鱼" % self.name)
+    def aa(self):
+        print("zxcbn")
+        self.name = "123"
 
-tom = Cat()
-tom.name = "Tom"
-tom.eat()
+    def bb(self):
+        print("waesfdg")
+        self.name = "321"
 
-lazy_cat = Cat()
-lazy_cat.name = "大懒猫"
-lazy_cat.eat()
+
+Ton = Cat()
+TT = Cat()
+Ton.aa()
+TT.bb()
+print(Ton.name)
+
+
+print(TT.name)
 # 2. [多行注释] Python 类的内置方法有哪些？
 """
 https://docs.python.org/zh-cn/3/library/functions.html

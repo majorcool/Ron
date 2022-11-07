@@ -18,6 +18,3 @@ class Student:
 
 
 student_1 = Student("zhang", "123456789")
-
-
-

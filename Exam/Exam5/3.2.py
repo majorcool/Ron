@@ -2,7 +2,7 @@ def num(n):
     n = bin(n)
     n = str(n)
     n = n[2::]
-    if len(n) < 32:
+    while len(n) < 32:
         n = "0" + n
     n = n[::-1]
     n = "0b" + n
