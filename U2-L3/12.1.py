@@ -60,6 +60,3 @@ class Person:
 
 a1 = Person("114")
 a1.something(514)
-
-
-

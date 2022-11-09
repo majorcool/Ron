@@ -25,3 +25,6 @@ class Test(Exam):
         self.points = 10
 
 
+
+
+
