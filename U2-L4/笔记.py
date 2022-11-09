@@ -17,6 +17,9 @@ class Animals:
     def call(self):  # self是实例
         print("animals")
 
+    def go(self):
+        print("Pig is an animal")
+
 
 class Cat(Animals):
     def call(self):
@@ -40,3 +43,4 @@ class Pig(Animals):
 
 pig = Pig()
 pig.call()
+Animals.go(pig)
