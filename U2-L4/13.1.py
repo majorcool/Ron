@@ -5,6 +5,10 @@
 # 3. 父类parent class
 # 4. 子类subclass
 # 5. 派生类derived class
+# 基类，父类，超类是一个东西，派生类，子类是一个东西
+# 基类，父类，超类是指被继承的类
+# 派生类，子类是指继承于基类的类
+
 
 # 13.1.2  定义 Exam 类和 Test 类
 # Exam 类包含 4 个实例属性：id，start_time，end_time，points
@@ -19,10 +23,15 @@ class Exam:
         self.points = points
 
 
-class Test():
-    def __init__(self, point, id: Exam):
-        self.points = 10
+class Test(Exam):
+    def __init__(self):
+        super().__init__()
+        delattr()
+        delattr()
 
+    # def __init__(self):
+    #     self.id = ""
+    #     self.points = 10
 
 
 
