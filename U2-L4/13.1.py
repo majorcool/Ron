@@ -19,9 +19,8 @@ class Exam:
         self.points = points
 
 
-class Test(Exam):
-    def __init__(self, points):
-        super().id
+class Test():
+    def __init__(self, point, id: Exam):
         self.points = 10
 
 
