@@ -30,8 +30,8 @@ class Fruit:
 
     def __another_secret(self):
         print(self.__real_name)
-# 实例属性2
-# 实例方法4
+# 实例属性4(包括私有属性)
+# 实例方法4(不包含内置方法)
 # 私有实列属性2
 # 私有实例方法2
 
