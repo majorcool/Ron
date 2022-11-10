@@ -6,13 +6,17 @@ class A:
         self.__a = 1
 
     def change(self):
-        self.__a = 2
+        self.__a = 12
         return self.__a
 
 
 class B(A):
-    pass
+    def __init__(self):
+        self.__b = 2
+
+    def change_0(self):
+        return self.change()
 
 
-a = A()
-print(a.change())
+c = B()
+print(c.change_0())
