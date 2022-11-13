@@ -75,4 +75,3 @@ while big_fish.hp > 0 and small_fishes != []:
         if small_fishes == []:
             print("No small fishes")
             break
-
