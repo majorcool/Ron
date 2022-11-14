@@ -35,5 +35,5 @@ def greatest_common_divisor_2(b):
             return greatest_common_divisor_2(b)
 
 
-b = [1, 2, 3, 4, 5]
+b = [2, 4, 6, 8, 10]
 print(greatest_common_divisor_2(b))
