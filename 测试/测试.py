@@ -18,4 +18,3 @@ def chess_board(chess_all_place_2):  # 棋子的总体位置
     return chess_all_place_2
 
 
-def
