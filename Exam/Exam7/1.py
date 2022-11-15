@@ -22,21 +22,19 @@ a = [999, 1999, 2999, 3999, 4999]
 print(greatest_common_divisor(a))
 
 
-def greatest_common_divisor_2(b):
-    if len(set(b)) == 1:
-        return set(b).pop()
-    b = sorted(b, reverse=True)
-    for num in range(0, len(b)):
-        if b[num] % b[num + 1] == 0:
-            b[num] = b[num + 1]
-            return greatest_common_divisor_2(b)
+def greatest_common_divisor_2(*nums):
+    if len(set(nums)) == 1:
+        return set(nums).pop()
+    nums = sorted(nums, reverse=True)
+    for i in range(len(nums)-1):
+        if nums[i] % nums[i+1] == 0:
+            nums[i] = nums[i+1]
         else:
-            b[num] = b[num] % b[num + 1]
-            return greatest_common_divisor_2(b)
+            nums[i] = nums[i] % nums[i+1]
+    return greatest_common_divisor_2(*nums)
 
 
-b = [2, 4, 6, 8, 10]
-print(greatest_common_divisor_2(b))
+print(greatest_common_divisor_2(999, 1999, 2999, 3999, 4999))
 
 
 
