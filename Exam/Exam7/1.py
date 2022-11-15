@@ -8,14 +8,14 @@
 # 4. 重复步骤 1 ~ 3，直至列表中所有数字都相等，此时这个数字即为这 n 个数的最大公约数
 # 采用 2 种方法实现，第 1 种：递归，第 2 种：非递归
 def greatest_common_divisor(n):
-    while n[0] != n[len(n)-1]:
+    while len(set(n)) != 1:
         n.sort(reverse=True)
         for num in range(0, len(n)-1):
             if n[num] % n[num+1] == 0:
                 n[num] = n[num+1]
             else:
-                n[num] = n[num] - n[num+1]
-    return n[0]
+                n[num] = n[num] % n[num+1]
+    return set(n).pop()
 
 
 a = [999, 1999, 2999, 3999, 4999]
@@ -23,17 +23,21 @@ print(greatest_common_divisor(a))
 
 
 def greatest_common_divisor_2(b):
-    b.sort(reverse=True)
-    if b[0] == b[len(b)-1]:
-        return b[0]
+    if len(set(b)) == 1:
+        return set(b).pop()
+    b = sorted(b, reverse=True)
     for num in range(0, len(b)):
         if b[num] % b[num + 1] == 0:
             b[num] = b[num + 1]
             return greatest_common_divisor_2(b)
         else:
-            b[num] = b[num] - b[num + 1]
+            b[num] = b[num] % b[num + 1]
             return greatest_common_divisor_2(b)
 
 
 b = [2, 4, 6, 8, 10]
 print(greatest_common_divisor_2(b))
+
+
+
+
