@@ -1,13 +1,15 @@
 class Animal:
     def __init__(self):
-        self.health = 100
+        self.health = 49
 
     def feed_0(self):
         self.health = self.health + 20
+        print("feed")
         return self.health
 
     def perform_0(self):
         self.health = self.health - 20
+        print("perform")
         return self.health
 
 
@@ -15,9 +17,13 @@ class Manager:
     def __init__(self, performance):
         self.performance = performance
 
-    def __inspect(self, health: Animal):
-        if health < 80:
+    def inspect(self, n: Animal):
+        print(self.__inspect(n))
+
+    def __inspect(self, n: Animal):
+        if n.health < 80:
             self.performance -= 20
+            print("cut")
             if self.performance < 0:
                 return self.performance == 0
             else:
@@ -53,7 +59,7 @@ def everyday():
     pig = Animal()
     keeper_0.feed(pig)
     trainer_0.perform(pig)
-    manager_0._Manager__inspect(100)
+    manager_0.inspect(pig)
 
 
 everyday()
