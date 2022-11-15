@@ -23,11 +23,11 @@ class Manager:
             else:
                 return self.performance
 
-    def feed(self):
-        return Animal.feed_0(self)
+    def feed(self, n: Animal):
+        return Animal.feed_0(n)
 
-    def perform(self):
-        return Animal.perform_0(self)
+    def perform(self, n: Animal):
+        return Animal.perform_0(n)
 
 
 class Keeper(Manager):
@@ -51,9 +51,9 @@ def everyday():
     trainer_0 = Trainer()
     manager_0 = Manager(100)
     pig = Animal()
-    keeper_0.feed()
-    trainer_0.perform()
-    manager_0._Manager__inspect()
+    keeper_0.feed(pig)
+    trainer_0.perform(pig)
+    manager_0._Manager__inspect(100)
 
 
 everyday()
