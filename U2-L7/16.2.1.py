@@ -18,23 +18,22 @@ import random
 class Dealer:
     def __init__(self):
         self.num = 0
-        self.again = False
+        self.win = False
 
     def set_number(self):
-        self.num = random.randint(0, 10)
-        return self.num
+        self.num_z = random.randint(0, 100)
+        return self.num_z
 
     def hint(self, n):
-        if n > self.num:
+        if n > self.num_z:
             print("猜大了")
-        elif n == self.num:
-            print("猜对了")
-            self.again=True
-        else:
+        elif n < self.num_z:
             print("猜小了")
-
-    def award(self, rounds:int):
-        return 10 - rounds
+        elif n == self.num_z:
+            print("猜对了")
+            self.win = True
+    def award(self, rounds):
+        return 11 - rounds
 
 
 class Player:
@@ -42,20 +41,22 @@ class Player:
         self.point = 0
 
     def guess_number(self):
-        num1 = random.randint(0, 10)
-        print(num1)
-        return num1
+        self.num_p = random.randint(0, 100)
+        return self.num_p
 
 
 def game():
-    count = 0
-    zj = Dealer()
-    wj = Player()
-    zj.set_number()
-    print(zj.num)
-    while zj.again == False:
-        zj.hint(wj.guess_number())
-        count += 1
-    print(zj.award(count))
+    dealer = Dealer()
+    player = Player()
+    times = 0
+    dealer.set_number()
+    print(dealer.num_z)
+    while dealer.win == False:
+        dealer.hint(player.guess_number())
+        times += 1
+    print(dealer.award(times))
+
 
 game()
+
+
