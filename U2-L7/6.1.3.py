@@ -25,5 +25,3 @@ def matrix_diagonal_sum(matrix: list[list[int]]) -> int:
 
 print(matrix_diagonal_sum([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
-
-
