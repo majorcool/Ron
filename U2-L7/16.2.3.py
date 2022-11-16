@@ -1,7 +1,8 @@
-# 16.2.2  猜数游戏 OOP Version 2
-# 1. 在  Version 1 的基础上，修改主程序
-#   - 不断进行游戏 game()
-#   - 玩家得分小于 -10 时，结束程序
+# 16.2.3  猜数游戏 OOP Version 3
+# 1. 在  Version 2 的基础上，修改玩家类的实例方法
+#   - 添加两个参数 n1、n2，返回 n1-n2 之间的随机整数（包含 n1, n2）
+#   - 根据庄家的提示，每次猜数时修改 n1 和 n2，以提高成功率
+# 2. 按照 Version 1 修改主程序，只运行一次 game()
 import random
 
 
@@ -31,8 +32,8 @@ class Player:
     def __init__(self):
         self.point = 0
 
-    def guess_number(self):
-        self.num_p = random.randint(0, 100)
+    def guess_number(self, a, b):
+        self.num_p = random.randint(a, b)
         return self.num_p
 
 
@@ -42,8 +43,13 @@ def game():
     times = 0
     dealer.set_number()
     print(dealer.num_z)
+    a = 0
+    b = 100
     while dealer.win == False:
-        dealer.hint(player.guess_number())
+        if times > 0:
+            a = int(input("输入范围（起始值）："))
+            b = int(input("输入范围（终止值）："))
+        dealer.hint(player.guess_number(a, b))
         times += 1
         if dealer.award(times) < -10:
             print("玩家得分小于-10，结束游戏")
@@ -51,11 +57,7 @@ def game():
     print(dealer.award(times))
 
 
-while True:
-    if game() < -10:
-        break
-    else:
-        game()
+game()
 
 
 
