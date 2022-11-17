@@ -15,8 +15,10 @@ class Dealer:
     def hint(self, n):
         if n > self.num_z:
             print("猜大了")
+            return [0, n-1]
         elif n < self.num_z:
             print("猜小了")
+            return [1, n+1]
         elif n == self.num_z:
             print("猜对了")
             self.win = True
@@ -46,13 +48,14 @@ def game():
     a = 0
     b = 100
     while dealer.win == False:
-        if times > 0:
-            a = int(input("输入范围（起始值）："))
-            b = int(input("输入范围（终止值）："))
-        dealer.hint(player.guess_number(a, b))
+        choice = dealer.hint(player.guess_number(a, b))
+        if dealer.win == True:
+            break
+        elif choice[0] == 0:
+            b = choice[1]
+        elif choice[0] == 1:
+            a = choice[1]
         times += 1
-        play_not_rise = int(input("play not rise?import 1 to change points;else import 0:"))
-        dealer.award(times, play_not_rise)
         if dealer.award(times) < -10:
             print("玩家得分小于-10，结束游戏")
             return dealer.award(times)
