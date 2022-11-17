@@ -32,6 +32,7 @@ class Dealer:
         elif n == self.num_z:
             print("猜对了")
             self.win = True
+
     def award(self, rounds):
         return 11 - rounds
 
@@ -58,5 +59,3 @@ def game():
 
 
 game()
-
-

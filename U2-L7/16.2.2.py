@@ -36,26 +36,27 @@ class Player:
         return self.num_p
 
 
-def game():
-    dealer = Dealer()
-    player = Player()
+def game(dealer, player):
+    dealer.win = False
     times = 0
     dealer.set_number()
-    print(dealer.num_z)
-    while dealer.win == False:
+    print("Dealer", dealer.num_z)
+    while not dealer.win:
         dealer.hint(player.guess_number())
         times += 1
         if dealer.award(times) < -10:
             print("玩家得分小于-10，结束游戏")
-            return dealer.award(times)
-    print(dealer.award(times))
+            return player.point
+    print("Player", dealer.award(times))
 
 
-while True:
-    if game() < -10:
-        break
-    else:
-        game()
+dealer = Dealer()
+player = Player()
+
+
+while game(dealer, player) < -10:
+    pass
+# global 变量,设为全局变量
 
 
 
