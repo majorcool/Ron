@@ -3,6 +3,7 @@
 #   - 实例属性 rounds，记录游戏回合数
 #   - 实例方法 judge()，游戏结束时，根据庄家的奖励，修改玩家的得分
 import random
+import random
 
 
 class Dealer:
@@ -17,14 +18,24 @@ class Dealer:
     def hint(self, n):
         if n > self.num_z:
             print("猜大了")
+            return [0, n-1]
         elif n < self.num_z:
             print("猜小了")
+            return [1, n+1]
         elif n == self.num_z:
             print("猜对了")
             self.win = True
 
     def award(self, rounds):
         return 11 - rounds
+
+
+class Rule:
+    def __init__(self):
+        self.rounds = 0
+        self.prize = 0
+    def judge(self, deealer, player):
+        player.point = deealer.award(self.rounds)
 
 
 class Player:
@@ -36,45 +47,30 @@ class Player:
         return self.num_p
 
 
-class Rule:
-    def __init__(self):
-        self.rounds = 0
-        self.prize = 0
-
-    # def judge(self):
-    #     self.prize = int(input("庄家奖励分数："))
-    #     return self.prize
-    def judge(self, deealer, player):
-        player.point = deealer.award(self.rounds)
-
-
 def game():
-    times = 0
-    time = Rule()
     dealer = Dealer()
     player = Player()
+    times = 0
     dealer.set_number()
     print(dealer.num_z)
     a = 0
     b = 100
     while dealer.win == False:
-        if times > 0:
-            a = int(input("输入范围（起始值）："))
-            b = int(input("输入范围（终止值）："))
-        dealer.hint(player.guess_number(a, b))
+        choice = dealer.hint(player.guess_number(a, b))
+        if dealer.win == True:
+            break
+        elif choice[0] == 0:
+            b = choice[1]
+        elif choice[0] == 1:
+            a = choice[1]
         times += 1
-        time.rounds += 1
         if dealer.award(times) < -10:
             print("玩家得分小于-10，结束游戏")
             return dealer.award(times)
-    print(dealer.award(times))  # +time.judge()
+    print(dealer.award(times))
 
 
 game()
-
-
-
-
 
 
 
