@@ -41,9 +41,11 @@ class Rule:
         self.rounds = 0
         self.prize = 0
 
-    def judge(self):
-        self.prize = int(input("庄家奖励分数："))
-        return self.prize
+    # def judge(self):
+    #     self.prize = int(input("庄家奖励分数："))
+    #     return self.prize
+    def judge(self, deealer, player):
+        player.point = deealer.award(self.rounds)
 
 
 def game():
@@ -65,7 +67,7 @@ def game():
         if dealer.award(times) < -10:
             print("玩家得分小于-10，结束游戏")
             return dealer.award(times)
-    print(dealer.award(times)+time.judge())
+    print(dealer.award(times))  # +time.judge()
 
 
 game()

@@ -48,6 +48,7 @@ def game(dealer, player):
             print("玩家得分小于-10，结束游戏")
             return player.point
     print("Player", dealer.award(times))
+    return player.point
 
 
 dealer = Dealer()
