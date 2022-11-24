@@ -54,6 +54,6 @@ Python提供了一个Exception类
 2)使用raise关键字抛出异常对象
 XXX=Exception("提示语")
 raise XXX
-可以在主程序血4捕获未知错误
+可以在主程序（4）捕获未知错误
 """
 
