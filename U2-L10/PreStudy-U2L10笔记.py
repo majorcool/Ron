@@ -1,3 +1,7 @@
+# 如何找到全部的异常
+# for name in dir(__builtins__):
+#     print(name)
+
 """
 1
 程序停止执行并抛出错误信息叫抛出异常（报错）
