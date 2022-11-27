@@ -6,14 +6,15 @@ class GetFloatError(Exception):
     pass
 
 
-def float_input(num):
+def float_input():
+    num = input("输入小数：")
     if num != float:
         raise GetFloatError
     return num
 
 
 try:
-    float_input(13)
+    float_input()
 except GetFloatError:
     print("not float")
 

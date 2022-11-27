@@ -8,19 +8,27 @@ class StartEndError(Exception):
     pass
 
 
-def start_end(start, end):
+class Not(Exception):
+    pass
+
+
+def start_end():
+    start = input("start:")
+    end = input("end:")
     if start > end:
         raise StartEndError
+    if start != int or end != int:
+        raise Not
     return random.randint(start, end)
 
 
 try:
-    print(start_end(1.1, 3))
+    print(start_end())
 
 except StartEndError:
-    print('AreaError')
-except ValueError:
-    print('ValueError')
+    print("AreaError")
+except Not:
+    print("not int")
 
 
 
