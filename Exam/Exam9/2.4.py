@@ -17,13 +17,13 @@ def calculate_tax(brackets: list[list[int]], income: int) -> float:
     for i in range(0, num):
         if i == 0:
             pay += brackets[i][0] * brackets[i][1] / 100
-        elif i != len(brackets)-1:
+        else:
              pay += (brackets[i+1][0] - brackets[i][0]) * brackets[i][1] / 100
     return pay
 
 
-brackets = [[2,50]]
-income = 0
+brackets = [[3,50],[7,10],[12,25]]
+income = 10
 print(calculate_tax(brackets, income))
 
 
