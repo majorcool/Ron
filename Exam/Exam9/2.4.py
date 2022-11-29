@@ -10,20 +10,14 @@
 # You are given an integer income representing the amount of money you earned.
 # Return the amount of money that you have to pay in taxes.
 def calculate_tax(brackets: list[list[int]], income: int) -> float:
-    num = 0
-    pay = 0
-    while brackets[num][0] <= income:
-        num += 1
-    for i in range(0, num):
-        if i == 0:
-            pay += brackets[i][0] * brackets[i][1] / 100
-        else:
-             pay += (brackets[i+1][0] - brackets[i][0]) * brackets[i][1] / 100
-    return pay
-
-
-brackets = [[3,50],[7,10],[12,25]]
-income = 10
+    brackets = [[0]] + brackets
+    res = 0
+    for i in range(len(brackets)):
+        if income <= brackets[i][0]:
+            for j in range(i, 0, -1):
+                res += (income - brackets[j - 1][0]) * brackets[j][1] / 100
+                income = brackets[j - 1][0]
+            return res
 print(calculate_tax(brackets, income))
 
 
