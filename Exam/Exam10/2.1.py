@@ -11,3 +11,4 @@ def find_lus_length(a: str, b: str) -> int:
 e = "phvfaedwkmmfinfxmws"
 f = "yx"
 print(find_lus_length(e, f))
+# 离大谱
