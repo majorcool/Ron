@@ -3,24 +3,27 @@ import pygame
 import random
 from scene import Ground, Cloud
 from obstacle import Cactus, Pterodactyl
+from dinosaur import Dinosaur
 
 FPS = 60
 TITLE = "Chrome Dino"
 BACKGROUND_COLOR = (235, 235, 235)
 SCREENSIZE = (700, 300)
 IMAGE_PATHS = {
-    "ground": "resources/images/ground.png",
-    "cloud": "resources/images/cloud.png",
-    "cactus1": "resources/images/Cactus1.png",
-    "cactus2": "resources/images/Cactus2.png",
-    "cactus3": "resources/images/Cactus3.png",
-    "cactus4": "resources/images/Cactus4.png",
-    "cactus5": "resources/images/Cactus5.png",
-    "cactus6": "resources/images/Cactus6.png",
-    "dinosaur1": "resources/images/dinosaur1.png",
-    "dinosaur2": "resources/images/dinosaur2.png",
-    "pterodactyl1": "resources/images/pterodactyl1.png",
-    "pterodactyl2": "resources/images/pterodactyl2.png",
+    "ground": "resources/images/ground/ground.png",
+    "cloud": "resources/images/cloud/cloud.png",
+    "cactus1": "resources/images/cactus/cactus-1.png",
+    "cactus2": "resources/images/cactus/cactus-2.png",
+    "cactus3": "resources/images/cactus/cactus-3.png",
+    "cactus4": "resources/images/cactus/cactus-4.png",
+    "cactus5": "resources/images/cactus/cactus-5.png",
+    "cactus6": "resources/images/cactus/cactus-6.png",
+    "dinosaur1": "resources/images/dinosaur/dinosaur-1.png",
+    "dinosaur2": "resources/images/dinosaur/dinosaur-2.png",
+    "pterodactyl1": "resources/images/pterodactyl/pterodactyl-1.png",
+    "pterodactyl2": "resources/images/pterodactyl/pterodactyl-2.png",
+    "dinosaur-run-1": "resources/images/dinosaur/dinosaur-run-1.png",
+    "dinosaur-run-2": "resources/images/dinosaur/dinosaur-run-2.png",
 }
 pygame.init()
 screen = pygame.display.set_mode(SCREENSIZE)
@@ -48,6 +51,14 @@ pterodactyls = pygame.sprite.Group()
 
 clock = pygame.time.Clock()
 
+image_dinosaur = []
+for i in range(1, 3):
+    __ = "dinosaur-run-".replace("dinosaur-run-", "dinosaur-run-" + str(i))
+    _ = pygame.image.load(IMAGE_PATHS[__])
+    image_dinosaur.append(_)
+dinosaurs = pygame.sprite.Group()
+
+
 while True:
 
     for event in pygame.event.get():
@@ -67,15 +78,20 @@ while True:
     if random.randint(0, 100) == 10:
         pterodactyls.add(Pterodactyl(image_pterodactyl, (SCREENSIZE[0], random.randrange(20, 75))))
 
+    if 1 == 1:
+        dinosaurs.add(Dinosaur(image_dinosaur))
+
     ground.update()
     cloud_sprites_group.update()
     cacti.update()
     pterodactyls.update()
+    dinosaurs.update()
 
     ground.draw(screen)
     cloud_sprites_group.draw(screen)
     cacti.draw(screen)
     pterodactyls.draw(screen)
+    dinosaurs.draw(screen)
 
     pygame.display.update()
     clock.tick(FPS)

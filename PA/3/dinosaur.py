@@ -2,7 +2,7 @@ import pygame
 
 
 class Dinosaur(pygame.sprite.Sprite):
-    def __init__(self, images, position=(40, 147), size=[(44, 47), (59, 47)], **kwargs):
+    def __init__(self, images, position=(0, 300), size=[(44, 47), (59, 47)], **kwargs):
         pygame.sprite.Sprite.__init__(self)
 
         self.images = images
@@ -11,10 +11,8 @@ class Dinosaur(pygame.sprite.Sprite):
         self.rect.left, self.rect.bottom = position
         self.mask = pygame.mask.from_surface(self.image)
 
-        self.refresh_rate = 5
+        self.refresh_rate = 10
         self.refresh_counter = 0
-
-        self.speed = 10
 
     def jump(self):
         pygame.mixer.Sound('resources/audios/jump.wav').play()
