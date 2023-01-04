@@ -78,8 +78,7 @@ while True:
     if random.randint(0, 100) == 10:
         pterodactyls.add(Pterodactyl(image_pterodactyl, (SCREENSIZE[0], random.randrange(20, 75))))
 
-    if 1 == 1:
-        dinosaurs.add(Dinosaur(image_dinosaur))
+    dinosaurs.add(Dinosaur(image_dinosaur))
 
     ground.update()
     cloud_sprites_group.update()
