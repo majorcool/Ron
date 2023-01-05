@@ -15,6 +15,7 @@ class Ground(pygame.sprite.Sprite):
         # left获取图像左边的数值(表示位置); right右边; bottom底部(下端)
 
         self.speed = -10
+        self.displacement = 0
 
     def update(self):
         self.rect_0.left += self.speed
@@ -26,6 +27,9 @@ class Ground(pygame.sprite.Sprite):
     def draw(self, screen):
         screen.blit(self.image_0, self.rect_0)
         screen.blit(self.image_1, self.rect_1)
+
+    def add_displacement(self):
+        self.displacement += 1
 
 
 class Cloud(pygame.sprite.Sprite):
@@ -44,13 +48,3 @@ class Cloud(pygame.sprite.Sprite):
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
-
-class ScoreBoard:
-    def __init__(self):
-        pass
-
-    def set_score(self):
-        pass
-
-    def draw(self):
-        pass
