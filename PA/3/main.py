@@ -100,7 +100,7 @@ while True:
         pressed = pygame.key.get_pressed()
 
         if pressed[pygame.K_SPACE]:
-            dinosaurs.status = "jump"
+            dinosaurs.jump()
 
     # if len(cloud_sprites_group) < 5:
     if random.randint(0, 100) == 10:
