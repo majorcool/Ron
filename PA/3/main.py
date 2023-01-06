@@ -143,14 +143,14 @@ while True:
 
         for _ in pterodactyls:
             if pygame.sprite.collide_mask(dinosaurs, _):
-                dinosaurs.die()  # self.status = 'die'
-                dinosaurs.update()  # change image when dinosaur dies
+                dinosaurs.die()
+                dinosaurs.update()
                 break
 
         for _ in cacti:
             if pygame.sprite.collide_mask(dinosaurs, _):
-                dinosaurs.die()  # self.status = 'die'
-                dinosaurs.update()  # change image when dinosaur dies
+                dinosaurs.die()
+                dinosaurs.update()
                 break
 
         if dinosaurs.status == "die":
@@ -159,24 +159,43 @@ while True:
                 i.write(str(scoreboards.high_score))
 
         if dinosaurs.status != "start":
-            if random.randint(0, 100) == 10:
+            if random.randint(0, 100) == 10 and len(cloud_sprites_group) <= 5:
                 cloud_sprites_group.add(Cloud(image_cloud, (SCREENSIZE[0], random.randrange(30, 75)), speed))
+            for _ in cloud_sprites_group:
+                if _.rect.right < 0:
+                    _.kill()
 
-            if random.randint(0, 100) == 10 and scoreboards.score >= 30:
+            if random.randint(0, 100) == 10 and scoreboards.score >= 30 and len(cacti) <= 2:
                 cacti.add(Cactus(image_cactus, (SCREENSIZE[0], SCREENSIZE[1]), speed))
+            for _ in cacti:
+                if _.rect.right < 0:
+                    _.kill()
+                for __ in cacti:
+                    if abs(_.rect.left - __.rect.left) < 60 and abs(_.rect.left - __.rect.left) != 0:
+                        __.kill()
 
-            if random.randint(0, 100) == 10 and scoreboards.score >= 130:
+            if random.randint(0, 100) == 10 and scoreboards.score >= 130 and len(pterodactyls) <= 1:
                 pterodactyls.add(Pterodactyl(image_pterodactyl, (SCREENSIZE[0], random.randrange(20, 75)), speed))
+            for _ in pterodactyls:
+                if _.rect.right < 0:
+                    _.kill()
+                for __ in cacti:
+                    if abs(_.rect.left - __.rect.left) < 30:
+                        _.kill()
 
             ground.add_displacement()
 
         scoreboards.score = ground.displacement // 7  # algorithm of score
+        score_little = scoreboards.score - 1
         if dinosaurs.status != "die":
             if scoreboards.score and not scoreboards.score % 100:
                 pygame.mixer.Sound('resources/audios/score.mp3').play()  # sound
-                speed -= 0.1
-                # scoreboards.light_on()
-                print("fefef")
+                stop = "open"
+                if stop == "close":
+                    speed -= 0.5
+                    stop = "open"
+            if score_little and not score_little % 100:
+                stop = "close"
 
         if dinosaurs.status != "die":
             ground.update()
