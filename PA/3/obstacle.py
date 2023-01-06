@@ -3,7 +3,7 @@ import random
 
 
 class Cactus(pygame.sprite.Sprite):
-    def __init__(self, images, position):
+    def __init__(self, images, position, speed):
         pygame.sprite.Sprite.__init__(self)
 
         self.image = random.choice(images)
@@ -11,7 +11,7 @@ class Cactus(pygame.sprite.Sprite):
         self.rect.left, self.rect.bottom = position
         self.mask = pygame.mask.from_surface(self.image)
 
-        self.speed = -10
+        self.speed = speed
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
@@ -23,7 +23,7 @@ class Cactus(pygame.sprite.Sprite):
 
 
 class Pterodactyl(pygame.sprite.Sprite):
-    def __init__(self, images, position):
+    def __init__(self, images, position, speed):
         pygame.sprite.Sprite.__init__(self)
 
         self.images = images
@@ -32,7 +32,7 @@ class Pterodactyl(pygame.sprite.Sprite):
         self.rect.left, self.rect.top = position
         self.mask = pygame.mask.from_surface(self.image)
 
-        self.speed = -10
+        self.speed = speed
 
         self.refresh_rate = 10
         self.refresh_counter = 0

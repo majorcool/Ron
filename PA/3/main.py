@@ -57,8 +57,9 @@ while True:
     screen = pygame.display.set_mode(SCREENSIZE)
     pygame.display.set_caption(TITLE)
 
+    speed = -10
     image_ground = pygame.image.load(IMAGE_PATHS["ground"])
-    ground = Ground(image_ground, (0, SCREENSIZE[1]))
+    ground = Ground(image_ground, (0, SCREENSIZE[1]), speed)
 
     image_cloud = pygame.image.load(IMAGE_PATHS['cloud'])
     cloud_sprites_group = pygame.sprite.Group()
@@ -159,13 +160,13 @@ while True:
 
         if dinosaurs.status != "start":
             if random.randint(0, 100) == 10:
-                cloud_sprites_group.add(Cloud(image_cloud, (SCREENSIZE[0], random.randrange(30, 75))))
+                cloud_sprites_group.add(Cloud(image_cloud, (SCREENSIZE[0], random.randrange(30, 75)), speed))
 
             if random.randint(0, 100) == 10 and scoreboards.score >= 30:
-                cacti.add(Cactus(image_cactus, (SCREENSIZE[0], SCREENSIZE[1])))
+                cacti.add(Cactus(image_cactus, (SCREENSIZE[0], SCREENSIZE[1]), speed))
 
             if random.randint(0, 100) == 10 and scoreboards.score >= 130:
-                pterodactyls.add(Pterodactyl(image_pterodactyl, (SCREENSIZE[0], random.randrange(20, 75))))
+                pterodactyls.add(Pterodactyl(image_pterodactyl, (SCREENSIZE[0], random.randrange(20, 75)), speed))
 
             ground.add_displacement()
 
@@ -173,14 +174,9 @@ while True:
         if dinosaurs.status != "die":
             if scoreboards.score and not scoreboards.score % 100:
                 pygame.mixer.Sound('resources/audios/score.mp3').play()  # sound
-                scoreboards.light_on()
-                ground.speed -= 0.1
-                for _ in cacti:
-                    _.speed -= 0.1
-                for _ in pterodactyls:
-                    _.speed -= 0.1
-                for _ in cloud_sprites_group:
-                    _.speed -= 0.1
+                speed -= 0.1
+                # scoreboards.light_on()
+                print("fefef")
 
         if dinosaurs.status != "die":
             ground.update()

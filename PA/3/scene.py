@@ -2,7 +2,7 @@ import pygame.sprite
 
 
 class Ground(pygame.sprite.Sprite):
-    def __init__(self, image, position):  # 图像, 位置(二值)
+    def __init__(self, image, position, speed):  # 图像, 位置(二值)
         pygame.sprite.Sprite.__init__(self)
 
         self.image_0 = image
@@ -14,7 +14,7 @@ class Ground(pygame.sprite.Sprite):
         self.rect_1.left, self.rect_1.bottom = self.rect_0.right, self.rect_0.bottom
         # left获取图像左边的数值(表示位置); right右边; bottom底部(下端)
 
-        self.speed = -10
+        self.speed = speed
         self.displacement = 0
 
     def update(self):
@@ -33,14 +33,14 @@ class Ground(pygame.sprite.Sprite):
 
 
 class Cloud(pygame.sprite.Sprite):
-    def __init__(self, image, position):
+    def __init__(self, image, position, speed):
         pygame.sprite.Sprite.__init__(self)
 
         self.image = image
         self.rect = self.image.get_rect()
         self.rect.left, self.rect.top = position
 
-        self.speed = -10
+        self.speed = speed
 
     def update(self):
         self.rect.left += self.speed

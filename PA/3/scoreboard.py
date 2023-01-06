@@ -19,30 +19,29 @@ class Scoreboard(pygame.sprite.Sprite):
         self.rect_score.right, self.rect_score.top = position
         self.rect_high_score.right, self.rect_high_score.top = self.rect_score.left - 20, self.rect_score.top
 
-    def light_on(self):
-        self.light = "on"
-
-    def light_off(self):
-        self.light = "off"
+    # def light_on(self):
+    #     self.light = "on"
+    #
+    # def light_off(self):
+    #     self.light = "off"
 
     def update(self):
         # stich current score image
         self.image_score = pygame.Surface((100, 31))
         self.image_score.fill((235, 235, 235))
-        if self.light == "on":
-            self.counter += 1
-            if 0 <= self.counter <= 100:
-                self.image_score.set_alpha(0, 0)
-            if 20 < self.counter <= 200:
-                self.image_score.set_alpha(255, 0)
-                self.counter = 0
-                self.time += 1
-            if self.time >= 4:
-                self.time = 0
-                self.light_off()
-        if self.light == "off":
-            for i, _ in enumerate(str(self.score).zfill(5)):  # current score images
-                self.image_score.blit(self.images[int(_)], (20 * i, 0))
+        # if self.light == "on":
+        #     self.counter += 1
+        #     if 0 <= self.counter <= 1000:
+        #         self.image_score.set_alpha(0, 0)
+        #     if 20 < self.counter <= 2000:
+        #         self.image_score.set_alpha(255, 0)
+        #         self.counter = 0
+        #         self.time += 1
+        #     if self.time >= 4:
+        #         self.time = 0
+        #         self.light_off()
+        for i, _ in enumerate(str(self.score).zfill(5)):  # current score images
+            self.image_score.blit(self.images[int(_)], (20 * i, 0))
 
         # stitch high score image
         self.image_high_score = pygame.Surface((160, 31))
