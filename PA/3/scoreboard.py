@@ -12,7 +12,7 @@ class Scoreboard(pygame.sprite.Sprite):
 
         self.time = 0
         self.counter = 0
-        self.light = "on"
+        self.light = "off"
         self.images = images
         self.image_score = self.rect_score = pygame.Surface((100, 31)).get_rect()
         self.image_high_score = self.rect_high_score = pygame.Surface((160, 31)).get_rect()
@@ -31,19 +31,18 @@ class Scoreboard(pygame.sprite.Sprite):
         self.image_score.fill((235, 235, 235))
         if self.light == "on":
             self.counter += 1
-            if self.counter == 0:
-                self.image_score.fill((0, 0, 0))
-            if self.counter == 20:
-                self.image_score.fill((235, 235, 235))
+            if 0 <= self.counter <= 100:
+                self.image_score.set_alpha(0, 0)
+            if 20 < self.counter <= 200:
+                self.image_score.set_alpha(255, 0)
                 self.counter = 0
                 self.time += 1
             if self.time >= 4:
                 self.time = 0
                 self.light_off()
-
-
-        for i, _ in enumerate(str(self.score).zfill(5)):  # current score images
-            self.image_score.blit(self.images[int(_)], (20 * i, 0))
+        if self.light == "off":
+            for i, _ in enumerate(str(self.score).zfill(5)):  # current score images
+                self.image_score.blit(self.images[int(_)], (20 * i, 0))
 
         # stitch high score image
         self.image_high_score = pygame.Surface((160, 31))

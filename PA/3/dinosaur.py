@@ -22,7 +22,7 @@ class Dinosaur(pygame.sprite.Sprite):
         self.velocity = 13  # 13
         self.refresh_rate = 5
         self.refresh_counter = 0
-        self.stop_line = self.rect.bottom - self.rect.top + 30
+        self.stop_line = self.rect.bottom - self.rect.top + 20
 
     def start_run(self):
         self.status = "run"

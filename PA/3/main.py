@@ -174,6 +174,13 @@ while True:
             if scoreboards.score and not scoreboards.score % 100:
                 pygame.mixer.Sound('resources/audios/score.mp3').play()  # sound
                 scoreboards.light_on()
+                ground.speed -= 0.1
+                for _ in cacti:
+                    _.speed -= 0.1
+                for _ in pterodactyls:
+                    _.speed -= 0.1
+                for _ in cloud_sprites_group:
+                    _.speed -= 0.1
 
         if dinosaurs.status != "die":
             ground.update()
