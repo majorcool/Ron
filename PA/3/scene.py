@@ -40,7 +40,7 @@ class Cloud(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.left, self.rect.top = position
 
-        self.speed = -6
+        self.speed = -10
 
     def update(self):
         self.rect.left += self.speed
