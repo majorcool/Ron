@@ -1,4 +1,4 @@
-import pygame.sprite
+import pygame
 
 
 class Ground(pygame.sprite.Sprite):
@@ -44,6 +44,8 @@ class Cloud(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.left += self.speed
+        if self.rect.right < 0:
+            self.kill()
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
