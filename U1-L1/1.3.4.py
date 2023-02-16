@@ -1,8 +1,0 @@
-n = input("Name:")
-g = input("Gender:")
-i = input("ID:")
-print("---- info ----")
-print("Name   :%s"%n)
-print("Gender :%s"%g)
-print("ID     :%s"%i)
-print("--------------")
